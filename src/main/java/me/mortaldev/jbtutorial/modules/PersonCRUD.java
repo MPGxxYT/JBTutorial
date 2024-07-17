@@ -1,21 +1,13 @@
 package me.mortaldev.jbtutorial.modules;
 
-import me.mortaldev.jbtutorial.utils.crud.AbstractCRUD;
-import me.mortaldev.jbtutorial.utils.crud.GsonGet;
-import me.mortaldev.jbtutorial.utils.crud.GsonSave;
-import me.mortaldev.jbtutorial.utils.crud.NormalDelete;
+import me.mortaldev.crud.AbstractCRUD;
+import me.mortaldev.jbtutorial.Main;
 
 public class PersonCRUD extends AbstractCRUD<Person> {
 
-  public PersonCRUD() {
-    iDelete = new NormalDelete();
-    iSave = new GsonSave();
-    iGet = new GsonGet();
-  }
-
   @Override
   public String getPath() {
-    return super.getPath() + "/people/";
+    return Main.getInstance().getDataFolder().getPath() + "/people/";
   }
 
   public Person getData(String id) {

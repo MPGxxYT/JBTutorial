@@ -1,5 +1,7 @@
 package me.mortaldev.jbtutorial.modules;
 
+import me.mortaldev.crud.AbstractCRUD;
+
 public class Person implements AbstractCRUD.Identifiable {
   String firstName;
   String lastName;

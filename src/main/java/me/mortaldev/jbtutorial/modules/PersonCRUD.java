@@ -1,6 +1,9 @@
 package me.mortaldev.jbtutorial.modules;
 
-import me.mortaldev.jbtutorial.modules.crud.*;
+import me.mortaldev.jbtutorial.utils.crud.AbstractCRUD;
+import me.mortaldev.jbtutorial.utils.crud.GsonGet;
+import me.mortaldev.jbtutorial.utils.crud.GsonSave;
+import me.mortaldev.jbtutorial.utils.crud.NormalDelete;
 
 public class PersonCRUD extends AbstractCRUD<Person> {
 

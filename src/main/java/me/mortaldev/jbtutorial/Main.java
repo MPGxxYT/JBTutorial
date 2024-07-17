@@ -2,10 +2,9 @@ package me.mortaldev.jbtutorial;
 
 import co.aikar.commands.PaperCommandManager;
 import java.util.HashSet;
-import me.mortaldev.jbtutorial.modules.Person;
-import me.mortaldev.jbtutorial.modules.PersonCRUD;
-import me.mortaldev.jbtutorial.modules.menu.GUIListener;
-import me.mortaldev.jbtutorial.modules.menu.GUIManager;
+
+import me.mortaldev.menuapi.GUIListener;
+import me.mortaldev.menuapi.GUIManager;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -79,11 +78,6 @@ public final class Main extends JavaPlugin {
     //    commandManager.registerCommand(new LoreCommand());
 
     getLogger().info(LABEL + " Enabled");
-
-    Person person = new Person("Zachary", "Carlson", 20);
-    new PersonCRUD().saveData(person);
-    Person newPerson = new PersonCRUD().getData("zachary_carlson");
-    log(newPerson.getID());
   }
 
   @Override

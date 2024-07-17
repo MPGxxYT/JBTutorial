@@ -9,22 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="I'll consider this the &quot;first commit&quot; since most of the changes are to make the library work on its own.">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_17_2024_3_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_17_2024_3_16_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="2nd Commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/menu/GUIListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/menu/GUIManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/menu/InventoryButton.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/menu/InventoryGUI.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/menu/InventoryHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/shelf/Uncommitted_changes_before_Update_at_7_17_2024_3_16_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/shelf/Uncommitted_changes_before_Update_at_7_17_2024_3_16_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/PersonCRUD.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/src/main/java/me/mortaldev/examples/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/src/main/java/me/mortaldev/examples/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +30,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Libraries/AbstractCRUD" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -58,31 +49,33 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="2jMp0VSIkt3fuWQYXCQYCQ0BAqI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.AbstractCRUD [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/Libraries/MenuAPI/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15039062",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.AbstractCRUD [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/Libraries/MenuAPI/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\YTCMP\Desktop\Code-Projects\Java\Minecraft\Plugin\Bukkit\Paper\Libraries\AbstractCRUD\src\main\java\me\mortaldev" />
@@ -115,6 +108,8 @@
       <workItem from="1721249895034" duration="328000" />
       <workItem from="1721250403626" duration="20000" />
       <workItem from="1721250810161" duration="77000" />
+      <workItem from="1721250939439" duration="1735000" />
+      <workItem from="1721253133450" duration="169000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -148,7 +143,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721246267086</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2nd Commit">
+      <option name="closed" value="true" />
+      <created>1721251170454</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1721251170454</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +161,11 @@
     <MESSAGE value="Commit 1" />
     <MESSAGE value="Commit 2" />
     <MESSAGE value="I'll consider this the &quot;first commit&quot; since most of the changes are to make the library work on its own." />
-    <option name="LAST_COMMIT_MESSAGE" value="I'll consider this the &quot;first commit&quot; since most of the changes are to make the library work on its own." />
+    <MESSAGE value="2nd Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="2nd Commit" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

@@ -2,20 +2,27 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="JBTutorial:jar" />
+      <artifact name="Build" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="2nd Commit">
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Updated the example classes to be package private.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/ActionType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/records/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/TextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/Person.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/PersonCRUD.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/src/main/java/me/mortaldev/examples/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/src/main/java/me/mortaldev/examples/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,12 +32,14 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../Libraries/AbstractCRUD" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -56,29 +65,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.AbstractCRUD [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/Libraries/MenuAPI/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.scopes&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.AbstractCRUD [install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/GTop/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15039062",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.scopes",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\YTCMP\Desktop\Code-Projects\Java\Minecraft\Plugin\Bukkit\Paper\Libraries\AbstractCRUD\src\main\java\me\mortaldev" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="me.mortaldev.jbtutorial.modules.book" />
+      <recent name="me.mortaldev.jbtutorial.utils" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -110,6 +123,7 @@
       <workItem from="1721250810161" duration="77000" />
       <workItem from="1721250939439" duration="1735000" />
       <workItem from="1721253133450" duration="169000" />
+      <workItem from="1721253339826" duration="11701000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -151,7 +165,23 @@
       <option name="project" value="LOCAL" />
       <updated>1721251170454</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="3rd Commit">
+      <option name="closed" value="true" />
+      <created>1721253432599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1721253432599</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Updated the example classes to be package private.">
+      <option name="closed" value="true" />
+      <created>1721253459855</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721253459855</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +192,9 @@
     <MESSAGE value="Commit 2" />
     <MESSAGE value="I'll consider this the &quot;first commit&quot; since most of the changes are to make the library work on its own." />
     <MESSAGE value="2nd Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="2nd Commit" />
+    <MESSAGE value="3rd Commit" />
+    <MESSAGE value="Updated the example classes to be package private." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the example classes to be package private." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

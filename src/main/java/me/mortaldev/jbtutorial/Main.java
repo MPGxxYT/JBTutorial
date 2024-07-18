@@ -3,6 +3,7 @@ package me.mortaldev.jbtutorial;
 import co.aikar.commands.PaperCommandManager;
 import java.util.HashSet;
 
+import me.mortaldev.jbtutorial.commands.TutorialCommand;
 import me.mortaldev.menuapi.GUIListener;
 import me.mortaldev.menuapi.GUIManager;
 import org.bukkit.Bukkit;
@@ -59,10 +60,10 @@ public final class Main extends JavaPlugin {
     }
 
     // CONFIGS
-    //    mainConfig = new MainConfig();
+    // mainConfig = new MainConfig();
 
     // Managers (Loading data)
-    //    GangManager.loadGangDataList();
+    // GangManager.loadGangDataList();
 
     // GUI Manager
     guiManager = new GUIManager();
@@ -71,11 +72,11 @@ public final class Main extends JavaPlugin {
 
     // Events
 
-    //    getServer().getPluginManager().registerEvents(new OnGangCommand(), this);
+    // getServer().getPluginManager().registerEvents(new OnGangCommand(), this);
 
     // COMMANDS
 
-    //    commandManager.registerCommand(new LoreCommand());
+    commandManager.registerCommand(new TutorialCommand());
 
     getLogger().info(LABEL + " Enabled");
   }

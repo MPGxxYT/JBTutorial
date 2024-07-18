@@ -9,20 +9,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Updated the example classes to be package private.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/ActionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/records/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/TextUtil.java" afterDir="false" />
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/YamlUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/exampleBook.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/ActionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +34,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,26 +66,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.AbstractCRUD [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/GTop/pom.xml",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15039062",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.scopes",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.AbstractCRUD [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/GTop/pom.xml&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\YTCMP\Desktop\Code-Projects\Java\Minecraft\Plugin\Bukkit\Paper\Libraries\AbstractCRUD\src\main\java\me\mortaldev" />
@@ -123,7 +124,11 @@
       <workItem from="1721250810161" duration="77000" />
       <workItem from="1721250939439" duration="1735000" />
       <workItem from="1721253133450" duration="169000" />
-      <workItem from="1721253339826" duration="11701000" />
+      <workItem from="1721253339826" duration="12087000" />
+      <workItem from="1721282460650" duration="275000" />
+      <workItem from="1721291831745" duration="1684000" />
+      <workItem from="1721334800366" duration="4769000" />
+      <workItem from="1721340909698" duration="4834000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -181,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721253459855</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system.">
+      <option name="closed" value="true" />
+      <created>1721268658988</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1721268658988</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +207,8 @@
     <MESSAGE value="2nd Commit" />
     <MESSAGE value="3rd Commit" />
     <MESSAGE value="Updated the example classes to be package private." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated the example classes to be package private." />
+    <MESSAGE value="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system." />
+    <option name="LAST_COMMIT_MESSAGE" value="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

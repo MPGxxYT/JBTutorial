@@ -2,5 +2,5 @@ name: JBTutorial
 version: '${project.version}'
 main: me.mortaldev.jbtutorial.Main
 api-version: '1.19'
-depend:
+softdepend:
   - Skript

@@ -47,6 +47,10 @@ public class Book {
     return steps;
   }
 
+  public void setSteps(List<BookStep> steps) {
+    this.steps = steps;
+  }
+
   public BookStep getStepAtIndex(int index) {
     return steps.get(index);
   }

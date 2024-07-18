@@ -4,6 +4,7 @@ import co.aikar.commands.PaperCommandManager;
 import java.util.HashSet;
 
 import me.mortaldev.jbtutorial.commands.TutorialCommand;
+import me.mortaldev.jbtutorial.modules.book.BookManager;
 import me.mortaldev.menuapi.GUIListener;
 import me.mortaldev.menuapi.GUIManager;
 import org.bukkit.Bukkit;
@@ -13,7 +14,8 @@ public final class Main extends JavaPlugin {
 
   private static final String LABEL = "JBTutorial";
   static Main instance;
-  static HashSet<String> dependencies =
+  static HashSet<String> dependencies = new HashSet<>();
+  static HashSet<String> softDepend =
       new HashSet<>() {
         {
           add("Skript");
@@ -58,11 +60,17 @@ public final class Main extends JavaPlugin {
         return;
       }
     }
+    for (String plugin : softDepend) {
+      if (Bukkit.getPluginManager().getPlugin(plugin) != null) {
+        log(plugin + " integration enabled.");
+      }
+    }
 
     // CONFIGS
     // mainConfig = new MainConfig();
 
     // Managers (Loading data)
+    BookManager.getInstance().loadBooks();
     // GangManager.loadGangDataList();
 
     // GUI Manager

@@ -1,0 +1,35 @@
+id: exampleBook
+title: Example Book
+description: This book is to show you all the elements a book yaml should have.
+crucial: false
+steps:
+    1:
+      text: This is the text telling the player what to do this step.
+      start: # This will run when this step starts.
+        1:
+          type: first-player-command
+          data: /home
+        2:
+          type: command
+          data: /tp %player% 0, 0, 0
+      actions: # These are actions a player must do to complete this step. Any of these will complete it.
+        1:
+          type: command
+          data: /tutorial
+        2:
+          type: mine
+          data: 10
+        3:
+          type: mine
+          data: 15 of MOSSY_COBBLESTONE
+    2:
+      text: These can be anything you want.
+      # You can also not include 'start:' if you don't want it
+      actions: # These are actions a player must do to complete this step. Any of these will complete it.
+        1:
+          type: call # This will have a custom Skript integration.
+          data: exampleBook2 # You'd use the expression: call %player%'s tutorial "exampleBook2"
+        3:
+          type: inventory click
+          data: IRON_DOOR named "&7Iron Door"
+rewards: # This is modified in the game. Please do not manually change any of this.

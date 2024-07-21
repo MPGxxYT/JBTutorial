@@ -115,7 +115,8 @@ public class TextUtil {
   }
 
   /**
-   * Removes formatting tags from a Component object and returns the resulting plain text string.
+   * Removes formatting tags from a Component object and returns the resulting plain text string
+   * with legacy color codes.
    *
    * @param component the Component object to remove the formatting tags from
    * @return the plain text string representation of the Component object without formatting tags

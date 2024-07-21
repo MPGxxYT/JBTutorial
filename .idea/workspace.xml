@@ -9,21 +9,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/YamlUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/exampleBook.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Did a ton today. Made some good progress. Ngl scared to bug test.&#10;&#10;Made the start &amp; action seconds function and work. Added ShopGuiPlus &amp; Skript integration. Last thing I need to do is make plans and bug test the hell out of it. I want it done by the 22nd, I think I'm on track. [Tho I am sick rn]">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/CommandListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/InventoryClickListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/MineListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/ShopGuiListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/ShopGuiStartup.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/profile/Profile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/profile/ProfileCRUD.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/profile/ProfileManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/register/effects/EffCallTutorial.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/ActionType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/TextUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/TextUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/YamlUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/YamlUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +141,13 @@
       <workItem from="1721282460650" duration="275000" />
       <workItem from="1721291831745" duration="1684000" />
       <workItem from="1721334800366" duration="4769000" />
-      <workItem from="1721340909698" duration="4834000" />
+      <workItem from="1721340909698" duration="6024000" />
+      <workItem from="1721347231290" duration="78000" />
+      <workItem from="1721347684798" duration="6000" />
+      <workItem from="1721347702729" duration="54000" />
+      <workItem from="1721456563732" duration="92000" />
+      <workItem from="1721461279255" duration="13003000" />
+      <workItem from="1721517925438" duration="23589000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -194,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721268658988</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Made book reader and made it load into the gui. Next step is to make the books work.">
+      <option name="closed" value="true" />
+      <created>1721346079109</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1721346079109</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,7 +235,9 @@
     <MESSAGE value="3rd Commit" />
     <MESSAGE value="Updated the example classes to be package private." />
     <MESSAGE value="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system." />
-    <option name="LAST_COMMIT_MESSAGE" value="Menu is about sorted, need to make the reader of book ymls to book object. Spent too long recoding the AbstractCRUD.java system." />
+    <MESSAGE value="Made book reader and made it load into the gui. Next step is to make the books work." />
+    <MESSAGE value="Did a ton today. Made some good progress. Ngl scared to bug test.&#10;&#10;Made the start &amp; action seconds function and work. Added ShopGuiPlus &amp; Skript integration. Last thing I need to do is make plans and bug test the hell out of it. I want it done by the 22nd, I think I'm on track. [Tho I am sick rn]" />
+    <option name="LAST_COMMIT_MESSAGE" value="Did a ton today. Made some good progress. Ngl scared to bug test.&#10;&#10;Made the start &amp; action seconds function and work. Added ShopGuiPlus &amp; Skript integration. Last thing I need to do is make plans and bug test the hell out of it. I want it done by the 22nd, I think I'm on track. [Tho I am sick rn]" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

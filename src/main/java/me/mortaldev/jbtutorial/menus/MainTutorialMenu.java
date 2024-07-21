@@ -1,11 +1,13 @@
 package me.mortaldev.jbtutorial.menus;
 
-import me.mortaldev.jbtutorial.Main;
+import java.util.ArrayList;
+import java.util.List;
 import me.mortaldev.jbtutorial.modules.book.Book;
 import me.mortaldev.jbtutorial.modules.book.BookManager;
 import me.mortaldev.jbtutorial.records.Pair;
 import me.mortaldev.jbtutorial.utils.ItemStackHelper;
 import me.mortaldev.jbtutorial.utils.TextUtil;
+import me.mortaldev.jbtutorial.utils.Utils;
 import me.mortaldev.menuapi.InventoryButton;
 import me.mortaldev.menuapi.InventoryGUI;
 import org.bukkit.Bukkit;
@@ -13,9 +15,6 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainTutorialMenu extends InventoryGUI {
 
@@ -96,11 +95,10 @@ public class MainTutorialMenu extends InventoryGUI {
     Pair<Integer, Integer> bookOrderPair;
     addBookButtons(crucialBooks, CRUCIAL_CENTER_SLOT);
     if (NORMAL_BOOK_ORDER.size() < normalBooks.size()) {
-      bookOrderPair = NORMAL_BOOK_ORDER.get(NORMAL_BOOK_ORDER.size()-1);
+      bookOrderPair = NORMAL_BOOK_ORDER.get(NORMAL_BOOK_ORDER.size() - 1);
     } else {
-      bookOrderPair = NORMAL_BOOK_ORDER.get(normalBooks.size()-1);
+      bookOrderPair = NORMAL_BOOK_ORDER.get(normalBooks.size() - 1);
     }
-    Main.log(bookOrderPair.first() + " " + bookOrderPair.second());
     addNormalBooks(normalBooks, bookOrderPair);
     super.decorate(player);
   }
@@ -122,7 +120,7 @@ public class MainTutorialMenu extends InventoryGUI {
   private void addBookButtons(List<Book> books, int centerSlot) {
     int slot = centerSlot;
     boolean alternate = true;
-    int alternateCount = 0;
+    int alternateCount = 1;
     for (Book book : books) {
       addButton(slot, BookButton(book));
       if (alternate) {
@@ -176,14 +174,20 @@ public class MainTutorialMenu extends InventoryGUI {
     return new InventoryButton()
         .creator(
             player -> { // Add the rewards part as well.
-              return BOOK_ITEM_STACK
-                  .name("&6&l"+book.getTitle())
-                  .replaceFirstLore("<description>", "&7"+book.getDescription())
-                  .build();
+              List<String> descriptionStrings =
+                  Utils.splitStringByWordLength(book.getDescription(), 25);
+              ItemStackHelper.Builder bookCopy = BOOK_ITEM_STACK.clone();
+              bookCopy.name("&6&l" + book.getTitle()).removeLore(0);
+              for (int i = 0; i < descriptionStrings.size(); i++) {
+                bookCopy.insertLore(TextUtil.format("&7" + descriptionStrings.get(i)), i);
+              }
+              return bookCopy.build();
             })
         .consumer(
             event -> {
               Player player = (Player) event.getWhoClicked();
+              BookManager.getInstance().startBook(player, book);
+              getInventory().close();
             });
   }
 }

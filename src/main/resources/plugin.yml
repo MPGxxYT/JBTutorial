@@ -4,3 +4,4 @@ main: me.mortaldev.jbtutorial.Main
 api-version: '1.19'
 softdepend:
   - Skript
+  - ShopGUIPlus

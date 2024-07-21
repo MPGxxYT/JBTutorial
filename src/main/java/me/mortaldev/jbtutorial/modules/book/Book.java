@@ -1,10 +1,9 @@
 package me.mortaldev.jbtutorial.modules.book;
 
-import me.mortaldev.jbtutorial.utils.ItemStackHelper;
-import org.bukkit.inventory.ItemStack;
-
 import java.util.ArrayList;
 import java.util.List;
+import me.mortaldev.jbtutorial.utils.ItemStackHelper;
+import org.bukkit.inventory.ItemStack;
 
 public class Book {
   private final String id;
@@ -52,20 +51,32 @@ public class Book {
   }
 
   public BookStep getStepAtIndex(int index) {
+    if (steps.size() < index + 1) {
+      return null;
+    }
     return steps.get(index);
   }
 
-  public void setRewards(List<String> rewards) {
+  public void setSerializedRewards(List<String> rewards) {
     this.rewards = rewards;
   }
 
-  public void addReward(ItemStack itemStack){
+  public void addReward(ItemStack itemStack) {
     String serializedReward = ItemStackHelper.serialize(itemStack);
     rewards.add(serializedReward);
   }
 
-  public void removeReward(ItemStack itemStack){
+  public void removeReward(ItemStack itemStack) {
     String serializedReward = ItemStackHelper.serialize(itemStack);
     rewards.remove(serializedReward);
+  }
+
+  public List<ItemStack> getRewards() {
+    return rewards.stream().map(ItemStackHelper::deserialize).toList();
+  }
+
+  public void setRewards(List<ItemStack> rewards) {
+    List<String> list = rewards.stream().map(ItemStackHelper::serialize).toList();
+    setSerializedRewards(list);
   }
 }

@@ -1,8 +1,7 @@
 package me.mortaldev.jbtutorial.utils;
 
-import me.mortaldev.jbtutorial.Main;
-
 import java.io.*;
+import me.mortaldev.jbtutorial.Main;
 
 public class YamlUtil {
   public static final String RESOURCE_LOAD_ERROR = "Failed to load resource: ";
@@ -33,5 +32,4 @@ public class YamlUtil {
   public static void loadResource(String name) {
     loadResource(MAIN.getDataFolder().getPath(), name);
   }
-
 }

@@ -1,5 +1,10 @@
 package me.mortaldev.jbtutorial.modules.book;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import me.mortaldev.jbtutorial.Main;
 import me.mortaldev.jbtutorial.modules.book.types.ActionType;
 import me.mortaldev.jbtutorial.modules.book.types.StartType;
 import me.mortaldev.jbtutorial.records.Pair;
@@ -7,12 +12,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 public class BookReader {
+
+  private static String ID;
 
   public static Book readBook(File file) {
     YamlConfiguration config = YamlConfiguration.loadConfiguration(file);
@@ -21,21 +23,22 @@ public class BookReader {
       Bukkit.getLogger().warning("BOOK MISSING ID: " + file.getName());
       return null;
     }
+    ID = id;
     String title = config.getString("title");
     if (title == null) {
-      Bukkit.getLogger().warning("BOOK MISSING TITLE: " + file.getName());
+      Bukkit.getLogger().warning("BOOK MISSING TITLE IN: " + ID + ".yml");
       return null;
     }
     String description = config.getString("description");
     if (description == null) {
-      Bukkit.getLogger().warning("BOOK MISSING DESCRIPTION: " + file.getName());
+      Bukkit.getLogger().warning("BOOK MISSING DESCRIPTION IN: " + ID + ".yml");
       return null;
     }
     boolean crucial = config.getBoolean("crucial");
     Book book = new Book(id, title, description, crucial);
     List<String> rewards = config.getStringList("rewards");
     if (!rewards.isEmpty()) {
-      book.setRewards(rewards);
+      book.setSerializedRewards(rewards);
     }
     List<BookStep> bookSteps = readSteps(config);
     if (!bookSteps.isEmpty()) {
@@ -43,7 +46,6 @@ public class BookReader {
     }
     return book;
   }
-
 
   private static List<BookStep> readSteps(YamlConfiguration config) {
     ConfigurationSection stepsSection = config.getConfigurationSection("steps");
@@ -61,17 +63,27 @@ public class BookReader {
       if (!startPairsList.isEmpty()) {
         bookStep.setStartActions(startPairsList);
       }
-      ConfigurationSection actionsSection = stepsSection.getConfigurationSection(stepKey + ".actions");
-      List<Pair<ActionType, String>> actionPairsList = readEnumSection(ActionType.class, actionsSection);
-      if (!actionPairsList.isEmpty()) {
-        bookStep.setActions(actionPairsList);
+      boolean info = stepsSection.getBoolean(stepKey + ".info", false);
+      bookStep.setInfo(info);
+      if (info) {
+        int delay = stepsSection.getInt(stepKey + ".delay", 3);
+        bookStep.setDelay(delay);
+      } else {
+        ConfigurationSection actionsSection =
+            stepsSection.getConfigurationSection(stepKey + ".actions");
+        List<Pair<ActionType, String>> actionPairsList =
+            readEnumSection(ActionType.class, actionsSection);
+        if (!actionPairsList.isEmpty()) {
+          bookStep.setActions(actionPairsList);
+        }
       }
       bookSteps.add(bookStep);
     }
     return bookSteps;
   }
 
-  private static <T extends Enum<T>> List<Pair<T, String>> readEnumSection(Class<T> enumClazz, ConfigurationSection section) {
+  private static <T extends Enum<T>> List<Pair<T, String>> readEnumSection(
+      Class<T> enumClazz, ConfigurationSection section) {
     if (section == null) {
       return new ArrayList<>();
     }
@@ -87,7 +99,8 @@ public class BookReader {
     return pairs;
   }
 
-  private static <T extends Enum<T>> Pair<T, String> readPair(Class<T> enumClazz, ConfigurationSection section) {
+  private static <T extends Enum<T>> Pair<T, String> readPair(
+      Class<T> enumClazz, ConfigurationSection section) {
     if (section == null) {
       return null;
     }
@@ -98,11 +111,25 @@ public class BookReader {
     String data = section.getString("data");
     if (data == null || data.isEmpty()) {
       return null;
-    }T typeEnum;
+    }
+    T typeEnum;
     try {
       typeEnum = Enum.valueOf(enumClazz, type.toUpperCase());
+      if (typeEnum.equals(ActionType.CALL)) {
+        if (!Main.getEnabledDependencies().contains("Skript")) {
+          Bukkit.getLogger()
+              .warning("UNABLE TO USE TYPE: '" + typeEnum + "'. Dependency 'Skript' is required.");
+        }
+      }
+      if (typeEnum.equals(ActionType.SELL)) {
+        if (!Main.getEnabledDependencies().contains("ShopGUIPlus")) {
+          Bukkit.getLogger()
+              .warning(
+                  "UNABLE TO USE TYPE: '" + typeEnum + "'. Dependency 'ShopGUIPlus' is required.");
+        }
+      }
     } catch (IllegalArgumentException e) {
-      Bukkit.getLogger().warning("TYPE NOT FOUND: " + type);
+      Bukkit.getLogger().warning("TYPE NOT FOUND: '" + type + "' in " + ID + ".yml");
       return null;
     }
     return new Pair<>(typeEnum, data);

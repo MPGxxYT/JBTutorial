@@ -19,6 +19,11 @@ public class TutorialCommand extends BaseCommand {
     Main.getGuiManager().openGUI(new MainTutorialMenu(), player);
   }
 
+  @Subcommand("cancel")
+  public void cancelBook(Player player) {
+    BookManager.getInstance().cancelBook(player);
+  }
+
   @Subcommand("reload")
   @CommandPermission("jbtutorial.admin")
   public void reload(Player player) {

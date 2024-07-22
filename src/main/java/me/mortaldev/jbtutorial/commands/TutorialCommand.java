@@ -24,11 +24,17 @@ public class TutorialCommand extends BaseCommand {
     BookManager.getInstance().cancelBook(player);
   }
 
+  @Subcommand("skip")
+  public void skipBook(Player player) {
+    BookManager.getInstance().skipBook(player);
+  }
+
   @Subcommand("reload")
   @CommandPermission("jbtutorial.admin")
   public void reload(Player player) {
-    Main.log("Reloading...");
-    player.sendMessage(TextUtil.format("&7Reloading books."));
+    Main.log("&7Reloading books & config...");
+    player.sendMessage(TextUtil.format("&7Reloading books & config."));
+    Main.getTutorialConfig().load();
     BookManager.getInstance().loadBooks();
   }
 }

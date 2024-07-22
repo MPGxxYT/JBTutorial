@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import me.mortaldev.jbtutorial.modules.book.Book;
 import me.mortaldev.jbtutorial.modules.book.BookManager;
+import me.mortaldev.jbtutorial.modules.book.Plan;
+import me.mortaldev.jbtutorial.modules.profile.ProfileManager;
 import me.mortaldev.jbtutorial.records.Pair;
 import me.mortaldev.jbtutorial.utils.ItemStackHelper;
 import me.mortaldev.jbtutorial.utils.TextUtil;
@@ -156,7 +158,7 @@ public class MainTutorialMenu extends InventoryGUI {
         .consumer(
             event -> {
               Player player = (Player) event.getWhoClicked();
-              // initialize tutorial plan
+              BookManager.getInstance().startPlan(player, Plan.FULL_TUTORIAL);
             });
   }
 
@@ -166,7 +168,7 @@ public class MainTutorialMenu extends InventoryGUI {
         .consumer(
             event -> {
               Player player = (Player) event.getWhoClicked();
-              // initialize tutorial plan
+              BookManager.getInstance().startPlan(player, Plan.PARTIAL_TUTORIAL);
             });
   }
 
@@ -186,6 +188,7 @@ public class MainTutorialMenu extends InventoryGUI {
         .consumer(
             event -> {
               Player player = (Player) event.getWhoClicked();
+              ProfileManager.getInstance().getProfile(player.getUniqueId()).setBookPlan(null);
               BookManager.getInstance().startBook(player, book);
               getInventory().close();
             });

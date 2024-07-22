@@ -1,0 +1,11 @@
+# This yml is used to define what's in the tutorials and their order.
+# From top to bottom, the IDs of each book, the tutorial begins at the top, ends at the bottom.
+
+full-tutorial:
+  - exampleBook
+  - nextBook
+  - 3rdBook
+
+partial-tutorial:
+  - exampleBook
+  - 3rdBook

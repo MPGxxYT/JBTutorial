@@ -29,7 +29,7 @@ steps:
         1:
           type: call # This will have a custom Skript integration.
           data: exampleBook2 # You'd use the expression: call %player%'s tutorial "exampleBook2"
-        3:
+        2:
           type: inventory click
           data: IRON_DOOR named "&7Iron Door"
 rewards: # This is modified in the game. Please do not manually change any of this.

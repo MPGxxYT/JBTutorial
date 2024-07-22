@@ -6,6 +6,7 @@ import co.aikar.commands.PaperCommandManager;
 import java.io.IOException;
 import java.util.HashSet;
 import me.mortaldev.jbtutorial.commands.TutorialCommand;
+import me.mortaldev.jbtutorial.config.TutorialConfig;
 import me.mortaldev.jbtutorial.listeners.*;
 import me.mortaldev.jbtutorial.modules.book.BookManager;
 import me.mortaldev.menuapi.GUIListener;
@@ -29,6 +30,7 @@ public final class Main extends JavaPlugin {
   static HashSet<String> enabledDependencies = new HashSet<>();
   static PaperCommandManager commandManager;
   static GUIManager guiManager;
+  static TutorialConfig tutorialConfig;
   private ShopGuiPlugin shopGuiPlugin;
 
   public static Main getInstance() {
@@ -49,6 +51,10 @@ public final class Main extends JavaPlugin {
 
   public static HashSet<String> getEnabledDependencies() {
     return enabledDependencies;
+  }
+
+  public static TutorialConfig getTutorialConfig() {
+    return tutorialConfig;
   }
 
   @Override
@@ -78,11 +84,10 @@ public final class Main extends JavaPlugin {
     }
 
     // CONFIGS
-    // mainConfig = new MainConfig();
+    tutorialConfig = new TutorialConfig();
 
     // Managers (Loading data)
     BookManager.getInstance().loadBooks();
-    // GangManager.loadGangDataList();
 
     // GUI Manager
     guiManager = new GUIManager();
@@ -99,6 +104,7 @@ public final class Main extends JavaPlugin {
     getServer().getPluginManager().registerEvents(new CommandListener(), this);
     getServer().getPluginManager().registerEvents(new MineListener(), this);
     getServer().getPluginManager().registerEvents(new InventoryClickListener(), this);
+    getServer().getPluginManager().registerEvents(new QuitListener(), this);
 
     // COMMANDS
 

@@ -1,11 +1,11 @@
 package me.mortaldev.jbtutorial.modules.profile;
 
+import java.util.*;
+import java.util.stream.Collectors;
 import me.mortaldev.crudapi.CRUD;
 import me.mortaldev.jbtutorial.modules.book.Book;
 import me.mortaldev.jbtutorial.modules.book.BookManager;
-
-import java.util.*;
-import java.util.stream.Collectors;
+import me.mortaldev.jbtutorial.modules.book.Plan;
 
 public class Profile implements CRUD.Identifiable {
 
@@ -14,7 +14,7 @@ public class Profile implements CRUD.Identifiable {
   private final Set<String> startedBooks;
   private Integer currentStep;
   private String activeBook;
-  private String bookPlan;
+  private Plan bookPlan;
   private Integer dataTracked;
 
   public Profile(UUID uuid) {
@@ -32,8 +32,15 @@ public class Profile implements CRUD.Identifiable {
   public void defaultData() {
     currentStep = 0;
     activeBook = null;
-    bookPlan = null;
     dataTracked = 0;
+  }
+
+  public Plan getBookPlan() {
+    return bookPlan;
+  }
+
+  public void setBookPlan(Plan bookPlan) {
+    this.bookPlan = bookPlan;
   }
 
   public UUID getUUID() {

@@ -23,8 +23,8 @@ import org.bukkit.inventory.ItemStack;
 public class BookManager {
   private static final String PATH =
       Main.getInstance().getDataFolder().getAbsolutePath() + "/books/";
-  private List<Book> books = new ArrayList<>();
   private final HashMap<String, Integer> tasks = new HashMap<>();
+  private List<Book> books = new ArrayList<>();
 
   public static BookManager getInstance() {
     return SingletonHolder.bookManager;
@@ -227,11 +227,11 @@ public class BookManager {
 
   public void showStep(BookStep step, Player player) {
     player.sendMessage("");
-    if (step.isInfo()){
+    if (step.isInfo()) {
       player.sendMessage(TextUtil.format("&f        [&6&lTutorial Info&f]"));
       List<String> strings = Utils.splitStringByWordLength(step.getText(), 18);
       for (String text : strings) {
-        player.sendMessage(TextUtil.format("&7   "+text));
+        player.sendMessage(TextUtil.format("&7   " + text));
       }
     } else {
       Component text = TextUtil.format("&f" + step.getText());
@@ -239,7 +239,28 @@ public class BookManager {
     }
     player.sendMessage("");
     if (!tasks.containsKey(player.getUniqueId().toString())) {
-      tasks.put(player.getUniqueId().toString(), Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getInstance(), () -> showStep(step, player), 30 * 20, 30 * 20));
+      tasks.put(
+          player.getUniqueId().toString(),
+          Bukkit.getScheduler()
+              .scheduleSyncRepeatingTask(
+                  Main.getInstance(), () -> showStep(step, player), 30 * 20, 30 * 20));
+    }
+  }
+
+  public void startPlan(Player player, Plan plan) {
+    switch (plan) {
+      case FULL_TUTORIAL -> {
+        String bookID = Main.getTutorialConfig().getTutorial(Plan.FULL_TUTORIAL).get(0);
+        Book book = getBook(bookID);
+        ProfileManager.getInstance().getProfile(player.getUniqueId()).setBookPlan(plan);
+        startBook(player, book);
+      }
+      case PARTIAL_TUTORIAL -> {
+        String bookID = Main.getTutorialConfig().getTutorial(Plan.PARTIAL_TUTORIAL).get(0);
+        Book book = getBook(bookID);
+        ProfileManager.getInstance().getProfile(player.getUniqueId()).setBookPlan(plan);
+        startBook(player, book);
+      }
     }
   }
 
@@ -256,13 +277,14 @@ public class BookManager {
             () -> {
               BookStep step = book.getStepAtIndex(0);
               showStep(step, player);
+              stopRepeatingShow(player);
+              for (Pair<StartType, String> action : step.getStartActions()) {
+                action.first().run(player, action.second());
+              }
               if (step.isInfo()) {
                 int delay = step.getDelay() * 20;
                 Bukkit.getScheduler()
-                    .scheduleSyncDelayedTask(
-                        Main.getInstance(),
-                        () -> nextStep(player),
-                        delay);
+                    .scheduleSyncDelayedTask(Main.getInstance(), () -> nextStep(player), delay);
               }
             },
             20);
@@ -309,12 +331,20 @@ public class BookManager {
     stopRepeatingShow(player);
     BookStep nextStep = activeBook.getStepAtIndex(currentStep);
     if (nextStep == null) {
-      // if player has a plan, continue to next book in plan.
-      // else just complete the book
       completeBook(player, activeBook);
+      if (profile.getBookPlan() != null) {
+        continuePlan(player, profile, activeBook);
+      }
       return;
     }
-    Main.log(nextStep.getDelay() + " | " + nextStep.getText() + " | " + nextStep.isInfo() + " | " + (currentStep + 1));
+    Main.log(
+        nextStep.getDelay()
+            + " | "
+            + nextStep.getText()
+            + " | "
+            + nextStep.isInfo()
+            + " | "
+            + (currentStep + 1));
     profile.setCurrentStep(currentStep + 1);
     profile.setDataTracked(0);
     for (Pair<StartType, String> action : nextStep.getStartActions()) {
@@ -325,11 +355,50 @@ public class BookManager {
     if (nextStep.isInfo()) {
       int delay = nextStep.getDelay() * 20;
       Bukkit.getScheduler()
+          .scheduleSyncDelayedTask(Main.getInstance(), () -> nextStep(player), delay);
+    }
+  }
+
+  private void continuePlan(Player player, Profile profile, Book activeBook) {
+    List<String> tutorial = Main.getTutorialConfig().getTutorial(profile.getBookPlan());
+    Main.log(tutorial.toString());
+    int nextIndex = tutorial.indexOf(activeBook.getId()) + 1;
+    if (tutorial.size() >= nextIndex + 1) {
+      Bukkit.getScheduler()
           .scheduleSyncDelayedTask(
               Main.getInstance(),
-              () -> nextStep(player),
-              delay);
+              () -> {
+                startBook(player, BookManager.getInstance().getBook(tutorial.get(nextIndex)));
+              },
+              3 * 20);
+    } else {
+      Component message =
+          TextUtil.format(
+              "&6Tutorial Plan &l" + profile.getBookPlan().getDisplay() + "&6 completed!.");
+      player.sendMessage(message);
+      player.showTitle(Title.title(message, TextUtil.format("&fYIPPIE!")));
+      profile.setBookPlan(null);
+      profile.save();
     }
+  }
+
+  public void skipBook(Player player) {
+    Profile profile = ProfileManager.getInstance().getProfile(player.getUniqueId());
+    Book activeBook = profile.getActiveBook();
+    if (activeBook == null) {
+      return;
+    }
+    if (profile.getBookPlan() != null) {
+      continuePlan(player, profile, activeBook);
+    } else {
+      Component message =
+          TextUtil.format("&fYou cancelled &6" + activeBook.getTitle() + "&f tutorial.");
+      player.sendMessage(message);
+    }
+    stopRepeatingShow(player);
+    profile.addStartedBook(activeBook);
+    profile.defaultData();
+    profile.save();
   }
 
   public void cancelBook(Player player) {
@@ -338,8 +407,19 @@ public class BookManager {
     if (activeBook == null) {
       return;
     }
-    player.sendMessage(
-        TextUtil.format("&fYou cancelled &6" + activeBook.getTitle() + "&f tutorial."));
+    if (profile.getBookPlan() != null) {
+      if (player.isOnline()) {
+        player.sendMessage(
+            TextUtil.format(
+                "&fYou cancelled your tutorial plan. &6(" + profile.getBookPlan() + ")"));
+      }
+      profile.setBookPlan(null);
+    } else {
+      if (player.isOnline()) {
+        player.sendMessage(
+            TextUtil.format("&fYou cancelled &6" + activeBook.getTitle() + "&f tutorial."));
+      }
+    }
     stopRepeatingShow(player);
     profile.addStartedBook(activeBook);
     profile.defaultData();
@@ -347,7 +427,9 @@ public class BookManager {
   }
 
   public void stopRepeatingShow(Player player) {
-    Bukkit.getScheduler().cancelTask(tasks.remove(player.getUniqueId().toString()));
+    if (tasks.containsKey(player.getUniqueId().toString())) {
+      Bukkit.getScheduler().cancelTask(tasks.remove(player.getUniqueId().toString()));
+    }
   }
 
   private static class SingletonHolder {

@@ -28,8 +28,6 @@ public class TutorialConfig {
     this.config = YamlConfiguration.loadConfiguration(path);
     fullTutorial = config.getStringList("full-tutorial");
     partialTutorial = config.getStringList("partial-tutorial");
-    Main.log(fullTutorial.toString());
-    Main.log(partialTutorial.toString());
   }
 
   public List<String> getTutorial(Plan plan) {

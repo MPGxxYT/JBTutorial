@@ -7,6 +7,7 @@ import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Subcommand;
 import me.mortaldev.jbtutorial.Main;
 import me.mortaldev.jbtutorial.menus.MainTutorialMenu;
+import me.mortaldev.jbtutorial.menus.manage.ViewBooksMenu;
 import me.mortaldev.jbtutorial.modules.book.BookManager;
 import me.mortaldev.jbtutorial.utils.TextUtil;
 import org.bukkit.entity.Player;
@@ -36,5 +37,11 @@ public class TutorialCommand extends BaseCommand {
     player.sendMessage(TextUtil.format("&7Reloading books & config."));
     Main.getTutorialConfig().load();
     BookManager.getInstance().loadBooks();
+  }
+
+  @Subcommand("manage")
+  @CommandPermission("jbtutorial.admin")
+  public void manageBooks(Player player) {
+    Main.getGuiManager().openGUI(new ViewBooksMenu(), player);
   }
 }

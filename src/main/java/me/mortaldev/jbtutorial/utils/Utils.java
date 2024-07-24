@@ -8,6 +8,25 @@ import org.bukkit.inventory.ItemStack;
 
 public class Utils {
 
+  public static String itemName(ItemStack itemStack){
+    String name = itemStack.getType().getKey().getKey().replaceAll("_", " ").toLowerCase();
+
+    String[] strings = name.split(" ");
+    StringBuilder stringBuilder = new StringBuilder();
+    for (int i = 0; i < strings.length; i++) {
+      String string = strings[i];
+      if (string.length() > 1) {
+        string = string.substring(0, 1).toUpperCase() + string.substring(1);
+        if (i+1 < strings.length) {
+          stringBuilder.append(string).append(" ");
+        } else {
+          stringBuilder.append(string);
+        }
+      }
+    }
+    return stringBuilder.toString();
+  }
+
   public static boolean canPlayerHold(ItemStack item, Player player) {
     int i = amountCanHold(item, player);
     return i > 0;
@@ -22,7 +41,7 @@ public class Utils {
     int maxStackSize = item.getType().getMaxStackSize();
     int itemTotal = airAmount * maxStackSize;
     for (ItemStack inventoryItem : storageContents) {
-      if (!inventoryItem.asOne().equals(item.asOne())
+      if (inventoryItem == null || !inventoryItem.asOne().equals(item.asOne())
           || inventoryItem.getAmount() >= maxStackSize) {
         continue;
       }

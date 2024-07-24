@@ -1,6 +1,7 @@
 package me.mortaldev.jbtutorial.modules.book;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -15,6 +16,17 @@ import org.bukkit.configuration.file.YamlConfiguration;
 public class BookReader {
 
   private static String ID;
+
+  public static void saveRewards(Book book){
+    File path = new File(BookManager.getPATH() + "/"+book.getId()+".yml");
+    YamlConfiguration config = YamlConfiguration.loadConfiguration(path);
+    config.set("rewards", book.getRawRewards());
+    try {
+      config.save(path);
+    } catch (IOException e) {
+      Main.log("Failed to save book rewards: " + book.getId()+".yml");
+    }
+  }
 
   public static Book readBook(File file) {
     YamlConfiguration config = YamlConfiguration.loadConfiguration(file);

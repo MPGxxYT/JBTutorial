@@ -2,7 +2,12 @@ package me.mortaldev.jbtutorial.modules.book;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import me.mortaldev.jbtutorial.utils.ItemStackHelper;
+import me.mortaldev.jbtutorial.utils.TextUtil;
+import me.mortaldev.jbtutorial.utils.Utils;
+import net.kyori.adventure.text.Component;
+import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 public class Book {
@@ -75,8 +80,50 @@ public class Book {
     return rewards.stream().map(ItemStackHelper::deserialize).toList();
   }
 
+  public List<String> getRawRewards(){
+    return rewards;
+  }
+
+  public Component[] getRewardsDisplay() {
+    Component[] components = new Component[rewards.size()];
+    int i = 0;
+    for (ItemStack reward : getRewards()) {
+      Component displayName;
+      if (reward.getItemMeta().hasDisplayName()) {
+        displayName = TextUtil.format("x" + reward.getAmount() + " ").append(reward.getItemMeta().displayName());
+      } else {
+        displayName = TextUtil.format("x" + reward.getAmount() + " " + Utils.itemName(reward));
+      }
+      components[i] = displayName;
+      i++;
+    }
+    return components;
+  }
+
+  public ItemStack getBookDisplay() {
+    List<String> descriptionStrings = Utils.splitStringByWordLength(getDescription(), 25);
+    ItemStackHelper.Builder bookItem = ItemStackHelper.builder(Material.BOOK).name("&6&l" + getTitle());
+    for (String string : descriptionStrings) {
+      bookItem.addLore("&7"+string);
+    }
+    Component[] rewardsDisplay = getRewardsDisplay();
+    if (rewardsDisplay.length > 0) {
+      bookItem.addLore().addLore("&e&lRewards:");
+      for (Component component : rewardsDisplay) {
+        Component append = TextUtil.format("&7 ").append(component);
+        bookItem.addLore(append);
+      }
+    }
+    return bookItem.build();
+  }
+
   public void setRewards(List<ItemStack> rewards) {
     List<String> list = rewards.stream().map(ItemStackHelper::serialize).toList();
     setSerializedRewards(list);
+  }
+
+  public void updateReward(ItemStack original, ItemStack replacement){
+    addReward(replacement);
+    removeReward(original);
   }
 }

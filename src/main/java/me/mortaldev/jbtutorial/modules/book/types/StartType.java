@@ -69,7 +69,6 @@ public enum StartType {
   private static void executeCommand(Player player, String data, boolean asPlayer) {
     data = data.replaceAll("/", "");
     String updatedData = data.replaceAll("%player%", player.getName());
-    Main.log("Executing command: " + data + " to " + updatedData + " " + asPlayer);
     if (asPlayer) {
       Bukkit.getServer().dispatchCommand(player, updatedData);
     } else {

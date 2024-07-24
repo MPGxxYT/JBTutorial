@@ -11,6 +11,7 @@ import me.mortaldev.jbtutorial.modules.book.types.StartType;
 import me.mortaldev.jbtutorial.modules.profile.Profile;
 import me.mortaldev.jbtutorial.modules.profile.ProfileManager;
 import me.mortaldev.jbtutorial.records.Pair;
+import me.mortaldev.jbtutorial.utils.NBTUtil;
 import me.mortaldev.jbtutorial.utils.TextUtil;
 import me.mortaldev.jbtutorial.utils.Utils;
 import me.mortaldev.jbtutorial.utils.YamlUtil;
@@ -50,6 +51,10 @@ public class BookManager {
     Main.log("Loaded " + books.size() + " book(s)");
   }
 
+  public static String getPATH() {
+    return PATH;
+  }
+
   public List<Book> getBooks() {
     return books;
   }
@@ -64,7 +69,7 @@ public class BookManager {
   }
 
   public void performAction(ActionType actionType, String performData, Player player) {
-    Main.log("action = " + actionType + " | " + performData.trim());
+//    Main.log("action = " + actionType + " | " + performData.trim());
     Profile profile = ProfileManager.getInstance().getProfile(player.getUniqueId());
     Book activeBook = profile.getActiveBook();
     if (activeBook == null) {
@@ -148,7 +153,6 @@ public class BookManager {
         return true;
       }
       int amountToComplete = Integer.parseInt(dataSplit[0]);
-      Main.log(amountToComplete + " | " + (dataTracked + amountProgressed));
       if (dataSplit.length > 1) {
         String blockType = dataSplit[1].toUpperCase();
         if (!performSplit[1].equals(blockType) && !dataSplit[0].equalsIgnoreCase("any")) {
@@ -178,7 +182,6 @@ public class BookManager {
     for (String data : pairData) {
       String[] split = data.split(" of ");
       int amountToComplete = Integer.parseInt(split[0]);
-      Main.log(amountToComplete + " | " + dataTracked);
       if (split.length > 1) {
         String blockType = split[1].toUpperCase();
         if (!performData.equals(blockType)) {
@@ -311,11 +314,27 @@ public class BookManager {
     player.sendMessage("");
     player.sendMessage(TextUtil.format("&e&lRewards:"));
     for (ItemStack reward : rewards) {
-      player.sendMessage(TextUtil.format("&f- &e").append(reward.displayName()));
-      if (Utils.canPlayerHold(reward, player)) {
-        player.getInventory().addItem(reward);
+      Component displayName;
+      if (reward.getItemMeta().hasDisplayName()) {
+        displayName = TextUtil.format("x" + reward.getAmount() + " ").append(reward.getItemMeta().displayName());
       } else {
-        player.getWorld().dropItem(player.getLocation(), reward);
+        displayName = TextUtil.format("x" + reward.getAmount() + " " + Utils.itemName(reward));
+      }
+      player.sendMessage(TextUtil.format("&f- &e").append(displayName));
+      if (NBTUtil.hasNBT(reward, "commandItem")) {
+        String command = NBTUtil.getNBT(reward, "commandItem");
+        if (command == null) {
+          continue;
+        }
+        command = command.replaceFirst("/", "");
+        command = command.replaceAll("%player%", player.getName());
+        Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), command);
+      } else {
+        if (Utils.canPlayerHold(reward, player)) {
+          player.getInventory().addItem(reward);
+        } else {
+          player.getWorld().dropItem(player.getLocation(), reward);
+        }
       }
     }
     player.sendMessage("");
@@ -337,14 +356,6 @@ public class BookManager {
       }
       return;
     }
-    Main.log(
-        nextStep.getDelay()
-            + " | "
-            + nextStep.getText()
-            + " | "
-            + nextStep.isInfo()
-            + " | "
-            + (currentStep + 1));
     profile.setCurrentStep(currentStep + 1);
     profile.setDataTracked(0);
     for (Pair<StartType, String> action : nextStep.getStartActions()) {
@@ -361,15 +372,12 @@ public class BookManager {
 
   private void continuePlan(Player player, Profile profile, Book activeBook) {
     List<String> tutorial = Main.getTutorialConfig().getTutorial(profile.getBookPlan());
-    Main.log(tutorial.toString());
     int nextIndex = tutorial.indexOf(activeBook.getId()) + 1;
     if (tutorial.size() >= nextIndex + 1) {
       Bukkit.getScheduler()
           .scheduleSyncDelayedTask(
               Main.getInstance(),
-              () -> {
-                startBook(player, BookManager.getInstance().getBook(tutorial.get(nextIndex)));
-              },
+              () -> startBook(player, BookManager.getInstance().getBook(tutorial.get(nextIndex))),
               3 * 20);
     } else {
       Component message =

@@ -1,6 +1,7 @@
 package me.mortaldev.jbtutorial.menus;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import me.mortaldev.jbtutorial.modules.book.Book;
 import me.mortaldev.jbtutorial.modules.book.BookManager;
@@ -9,7 +10,6 @@ import me.mortaldev.jbtutorial.modules.profile.ProfileManager;
 import me.mortaldev.jbtutorial.records.Pair;
 import me.mortaldev.jbtutorial.utils.ItemStackHelper;
 import me.mortaldev.jbtutorial.utils.TextUtil;
-import me.mortaldev.jbtutorial.utils.Utils;
 import me.mortaldev.menuapi.InventoryButton;
 import me.mortaldev.menuapi.InventoryGUI;
 import org.bukkit.Bukkit;
@@ -35,16 +35,6 @@ public class MainTutorialMenu extends InventoryGUI {
           .addLore("&7the crucial parts of our server.")
           .addLore()
           .addLore("&eClick to begin!");
-
-  private static final ItemStackHelper.Builder BOOK_ITEM_STACK =
-      ItemStackHelper.builder(Material.BOOK)
-          .name("<title>")
-          .addLore("<description>")
-          //      .addLore()
-          //      .addLore("&e&lRewards:")
-          //      .addLore("&7- &e<reward>")
-          .addLore()
-          .addLore("&7(Click to start)");
 
   private static final int CRUCIAL_CENTER_SLOT = 31;
   private static final int NORMAL_CENTER_SLOT_1 = 40;
@@ -120,19 +110,12 @@ public class MainTutorialMenu extends InventoryGUI {
   }
 
   private void addBookButtons(List<Book> books, int centerSlot) {
-    int slot = centerSlot;
-    boolean alternate = true;
-    int alternateCount = 1;
+    books.sort(Comparator.comparing(Book::getTitle));
+    int adjust = (int) Math.floor((double) books.size() / 2);
+    int slot = centerSlot - adjust;
     for (Book book : books) {
       addButton(slot, BookButton(book));
-      if (alternate) {
-        slot += alternateCount;
-        alternate = false;
-      } else {
-        slot -= alternateCount;
-        alternate = true;
-      }
-      alternateCount++;
+      slot++;
     }
   }
 
@@ -175,15 +158,10 @@ public class MainTutorialMenu extends InventoryGUI {
   private InventoryButton BookButton(Book book) {
     return new InventoryButton()
         .creator(
-            player -> { // Add the rewards part as well.
-              List<String> descriptionStrings =
-                  Utils.splitStringByWordLength(book.getDescription(), 25);
-              ItemStackHelper.Builder bookCopy = BOOK_ITEM_STACK.clone();
-              bookCopy.name("&6&l" + book.getTitle()).removeLore(0);
-              for (int i = 0; i < descriptionStrings.size(); i++) {
-                bookCopy.insertLore(TextUtil.format("&7" + descriptionStrings.get(i)), i);
-              }
-              return bookCopy.build();
+            player -> {
+              ItemStackHelper.Builder bookItem = ItemStackHelper.builder(book.getBookDisplay());
+              bookItem.addLore().addLore("&7(Click to start)");
+              return bookItem.build();
             })
         .consumer(
             event -> {

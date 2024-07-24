@@ -153,6 +153,14 @@ public class ItemStackHelper {
       return this;
     }
 
+
+    public Builder addLore(String... strings) {
+      for (String string : strings) {
+        addLore(string);
+      }
+      return this;
+    }
+
     /**
      * Adds a lore to the item. Empty will add blank lore.
      *

@@ -9,7 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Updated version control">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,32 +57,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Maven.AbstractCRUD [clean].executor": "Run",
-    "Maven.AbstractCRUD [install].executor": "Run",
-    "Maven.AbstractCRUD [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
-    "Maven.AbstractCRUD [package].executor": "Run",
-    "Maven.JBTutorial [clean].executor": "Run",
-    "Maven.JBTutorial [install].executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/Libraries/AbstractCRUD",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15039062",
-    "project.structure.side.proportion": "0.57173914",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.AbstractCRUD [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.AbstractCRUD [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.AbstractCRUD [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.AbstractCRUD [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JBTutorial [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JBTutorial [install].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/Libraries/AbstractCRUD&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.57173914&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\YTCMP\Desktop\Code-Projects\Java\Minecraft\Plugin\Bukkit\Paper\Libraries\AbstractCRUD\src\main\java\me\mortaldev" />
@@ -136,7 +139,8 @@
       <workItem from="1721784130291" duration="9744000" />
       <workItem from="1721795146162" duration="3273000" />
       <workItem from="1721853491088" duration="57000" />
-      <workItem from="1721853623618" duration="659000" />
+      <workItem from="1721853623618" duration="788000" />
+      <workItem from="1721854423174" duration="699000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -242,7 +246,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721854241708</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated version control">
+      <option name="closed" value="true" />
+      <created>1721854310639</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1721854310639</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +276,8 @@
     <MESSAGE value="Not perfect, will def perfect later. But added the tutorial.yml for setting up the different tutorials. Will add tutorial rewards next. Whenever that is. Dying from a head cold atm." />
     <MESSAGE value="Have yet to completely bug test it. But I think it functions well enough to be released." />
     <MESSAGE value="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
+    <MESSAGE value="Updated version control" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated version control" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

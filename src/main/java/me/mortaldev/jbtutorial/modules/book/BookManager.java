@@ -251,6 +251,11 @@ public class BookManager {
   }
 
   public void startPlan(Player player, Plan plan) {
+    Plan bookPlan = ProfileManager.getInstance().getProfile(player.getUniqueId()).getBookPlan();
+    if (bookPlan == plan) {
+      player.sendMessage(TextUtil.format("&cYou are already doing a plan, do /tutorial cancel to cancel it."));
+      return;
+    }
     switch (plan) {
       case FULL_TUTORIAL -> {
         String bookID = Main.getTutorialConfig().getTutorial(Plan.FULL_TUTORIAL).get(0);
@@ -397,6 +402,9 @@ public class BookManager {
       return;
     }
     if (profile.getBookPlan() != null) {
+      Component message =
+          TextUtil.format("&fSkipping &6" + activeBook.getTitle() + "&f tutorial.");
+      player.sendMessage(message);
       continuePlan(player, profile, activeBook);
     } else {
       Component message =

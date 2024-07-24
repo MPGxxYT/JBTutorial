@@ -2,29 +2,23 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Build" />
+      <artifact name="Release" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Not perfect, will def perfect later. But added the tutorial.yml for setting up the different tutorials. Will add tutorial rewards next. Whenever that is. Dying from a head cold atm.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/manage/EditBookRewardsMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/manage/ViewBooksMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/NBTUtil.java" afterDir="false" />
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Have yet to completely bug test it. But I think it functions well enough to be released.">
+      <change beforePath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/commands/LoreCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/commands/RenameCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/menus/GTopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/menus/GTopMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/commands/TutorialCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/config/TutorialConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/config/TutorialConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/ShopGuiListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/listeners/ShopGuiListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/types/StartType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +50,9 @@
     &quot;accountId&quot;: &quot;e3016051-b245-42fc-8cf7-9f77bc2eb83e&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -67,30 +64,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.AbstractCRUD [install].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/GTop/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15039062&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.AbstractCRUD [clean].executor": "Run",
+    "Maven.AbstractCRUD [install].executor": "Run",
+    "Maven.JBTutorial [clean].executor": "Run",
+    "Maven.JBTutorial [install].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/YTCMP/Desktop/Code-Projects/Java/Minecraft/Plugin/Bukkit/Paper/Libraries/AbstractCRUD",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15039062",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\YTCMP\Desktop\Code-Projects\Java\Minecraft\Plugin\Bukkit\Paper\Libraries\AbstractCRUD\src\main\java\me\mortaldev" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\YTCMP\Desktop\Code-Projects\Java\Minecraft\Plugin\Bukkit\Paper\JBTutorial" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="me.mortaldev.jbtutorial.modules.book" />
@@ -138,7 +141,10 @@
       <workItem from="1721461279255" duration="13003000" />
       <workItem from="1721517925438" duration="24330000" />
       <workItem from="1721613376237" duration="5514000" />
-      <workItem from="1721784130291" duration="8808000" />
+      <workItem from="1721784130291" duration="9744000" />
+      <workItem from="1721795146162" duration="3273000" />
+      <workItem from="1721853491088" duration="57000" />
+      <workItem from="1721853623618" duration="161000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -228,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721618936610</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Have yet to completely bug test it. But I think it functions well enough to be released.">
+      <option name="closed" value="true" />
+      <created>1721794328670</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721794328670</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +259,8 @@
     <MESSAGE value="Made book reader and made it load into the gui. Next step is to make the books work." />
     <MESSAGE value="Did a ton today. Made some good progress. Ngl scared to bug test.&#10;&#10;Made the start &amp; action seconds function and work. Added ShopGuiPlus &amp; Skript integration. Last thing I need to do is make plans and bug test the hell out of it. I want it done by the 22nd, I think I'm on track. [Tho I am sick rn]" />
     <MESSAGE value="Not perfect, will def perfect later. But added the tutorial.yml for setting up the different tutorials. Will add tutorial rewards next. Whenever that is. Dying from a head cold atm." />
-    <option name="LAST_COMMIT_MESSAGE" value="Not perfect, will def perfect later. But added the tutorial.yml for setting up the different tutorials. Will add tutorial rewards next. Whenever that is. Dying from a head cold atm." />
+    <MESSAGE value="Have yet to completely bug test it. But I think it functions well enough to be released." />
+    <option name="LAST_COMMIT_MESSAGE" value="Have yet to completely bug test it. But I think it functions well enough to be released." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

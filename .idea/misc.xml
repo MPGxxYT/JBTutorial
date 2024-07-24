@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/../Libraries/AbstractCRUD/pom.xml" />
         <option value="$PROJECT_DIR$/../Libraries/MenuAPI/pom.xml" />
         <option value="$PROJECT_DIR$/../GTop/pom.xml" />
+        <option value="$PROJECT_DIR$/AbstractCRUD/pom.xml" />
+        <option value="$PROJECT_DIR$/MenuAPI/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

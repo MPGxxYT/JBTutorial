@@ -7,7 +7,7 @@ steps:
       text: This is the text telling the player what to do this step.
       start: # This will run when this step starts.
         1:
-          type: first-player-command
+          type: first_player_command
           data: /home
         2:
           type: command
@@ -27,9 +27,9 @@ steps:
       # You can also not include 'start:' if you don't want it
       actions: # These are actions a player must do to complete this step. Any of these will complete it.
         1:
-          type: call # This will have a custom Skript integration.
-          data: exampleBook2 # You'd use the expression: call %player%'s tutorial "exampleBook2"
+          type: command
+          data: /spawn
         2:
-          type: inventory click
+          type: inventory_click
           data: IRON_DOOR named "&7Iron Door"
-rewards: # This is modified in the game. Please do not manually change any of this.
+rewards: [] # This is modified in the game. Please do not manually change any of this.

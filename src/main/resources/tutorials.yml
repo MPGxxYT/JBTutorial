@@ -3,9 +3,9 @@
 
 full-tutorial:
   - exampleBook
-  - nextBook
-  - 3rdBook
+  - exampleBook
+  - exampleBook
 
 partial-tutorial:
   - exampleBook
-  - 3rdBook
+  - exampleBook

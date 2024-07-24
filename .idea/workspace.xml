@@ -9,17 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Have yet to completely bug test it. But I think it functions well enough to be released.">
-      <change beforePath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/commands/LoreCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/commands/RenameCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/menus/GTopMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/../GTop/src/main/java/me/mortaldev/gtop/menus/GTopMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Libraries/AbstractCRUD/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,6 +58,8 @@
   "keyToString": {
     "Maven.AbstractCRUD [clean].executor": "Run",
     "Maven.AbstractCRUD [install].executor": "Run",
+    "Maven.AbstractCRUD [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor": "Run",
+    "Maven.AbstractCRUD [package].executor": "Run",
     "Maven.JBTutorial [clean].executor": "Run",
     "Maven.JBTutorial [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -81,10 +73,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
+    "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15039062",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "project.structure.side.proportion": "0.57173914",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -144,7 +136,7 @@
       <workItem from="1721784130291" duration="9744000" />
       <workItem from="1721795146162" duration="3273000" />
       <workItem from="1721853491088" duration="57000" />
-      <workItem from="1721853623618" duration="161000" />
+      <workItem from="1721853623618" duration="659000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -242,13 +234,24 @@
       <option name="project" value="LOCAL" />
       <updated>1721794328670</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code.">
+      <option name="closed" value="true" />
+      <created>1721854241708</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721854241708</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../GTop" />
+    </ignored-roots>
     <MESSAGE value="Commit 1" />
     <MESSAGE value="Commit 2" />
     <MESSAGE value="I'll consider this the &quot;first commit&quot; since most of the changes are to make the library work on its own." />
@@ -260,7 +263,8 @@
     <MESSAGE value="Did a ton today. Made some good progress. Ngl scared to bug test.&#10;&#10;Made the start &amp; action seconds function and work. Added ShopGuiPlus &amp; Skript integration. Last thing I need to do is make plans and bug test the hell out of it. I want it done by the 22nd, I think I'm on track. [Tho I am sick rn]" />
     <MESSAGE value="Not perfect, will def perfect later. But added the tutorial.yml for setting up the different tutorials. Will add tutorial rewards next. Whenever that is. Dying from a head cold atm." />
     <MESSAGE value="Have yet to completely bug test it. But I think it functions well enough to be released." />
-    <option name="LAST_COMMIT_MESSAGE" value="Have yet to completely bug test it. But I think it functions well enough to be released." />
+    <MESSAGE value="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

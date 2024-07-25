@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="Release" />
+      <artifact name="Build" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Updated version control">
+    <list default="true" id="0b7d99d8-3975-4e16-8b8e-1626deb67ccc" name="Changes" comment="Added checks for plan and a skip message">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/BookManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/menus/MainTutorialMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/modules/book/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/mortaldev/jbtutorial/utils/ItemStackHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +65,7 @@
     &quot;Maven.AbstractCRUD [install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.AbstractCRUD [org.apache.maven.plugins:maven-jar-plugin:3.3.0:jar].executor&quot;: &quot;Run&quot;,
     &quot;Maven.AbstractCRUD [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.JBTutorial [clean,install].executor&quot;: &quot;Run&quot;,
     &quot;Maven.JBTutorial [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.JBTutorial [install].executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -140,7 +143,8 @@
       <workItem from="1721795146162" duration="3273000" />
       <workItem from="1721853491088" duration="57000" />
       <workItem from="1721853623618" duration="788000" />
-      <workItem from="1721854423174" duration="699000" />
+      <workItem from="1721854423174" duration="3482000" />
+      <workItem from="1721884483794" duration="6483000" />
     </task>
     <task id="LOCAL-00001" summary="Commit 1">
       <option name="closed" value="true" />
@@ -254,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721854310639</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added checks for plan and a skip message">
+      <option name="closed" value="true" />
+      <created>1721855415980</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1721855415980</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,7 +289,8 @@
     <MESSAGE value="Have yet to completely bug test it. But I think it functions well enough to be released." />
     <MESSAGE value="Remove LoreCommand and RenameCommand classes&#10;&#10;Deleted unnecessary LoreCommand and RenameCommand classes as part of code cleanup. Updated several configuration files for consistent naming and fixed minor formatting issues in the code." />
     <MESSAGE value="Updated version control" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated version control" />
+    <MESSAGE value="Added checks for plan and a skip message" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added checks for plan and a skip message" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

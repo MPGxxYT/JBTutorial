@@ -22,6 +22,20 @@ public class ItemStackHelper {
     return Base64.getEncoder().encodeToString(itemStackAsBytes);
   }
 
+  public static String serializePass(ItemStack itemStack, Integer passes) {
+    String serialize;
+    ItemStack deserialize = itemStack;
+    for(int i = 0; i < passes; i++) {
+      serialize = serialize(deserialize);
+      deserialize = deserialize(serialize);
+    }
+    return serialize(deserialize);
+  }
+
+  public static String serializePass(ItemStack itemStack) {
+    return serializePass(itemStack, 1);
+  }
+
   /**
    * Deserializes a Base64 encoded string into an ItemStack object.
    *

@@ -85,13 +85,17 @@ public class MainTutorialMenu extends InventoryGUI {
       }
     }
     Pair<Integer, Integer> bookOrderPair;
-    addBookButtons(crucialBooks, CRUCIAL_CENTER_SLOT);
-    if (NORMAL_BOOK_ORDER.size() < normalBooks.size()) {
-      bookOrderPair = NORMAL_BOOK_ORDER.get(NORMAL_BOOK_ORDER.size() - 1);
-    } else {
-      bookOrderPair = NORMAL_BOOK_ORDER.get(normalBooks.size() - 1);
+    if (!crucialBooks.isEmpty()) {
+      addBookButtons(crucialBooks, CRUCIAL_CENTER_SLOT);
     }
-    addNormalBooks(normalBooks, bookOrderPair);
+    if (!normalBooks.isEmpty()) {
+      if (NORMAL_BOOK_ORDER.size() < normalBooks.size()) {
+        bookOrderPair = NORMAL_BOOK_ORDER.get(NORMAL_BOOK_ORDER.size() - 1);
+      } else {
+        bookOrderPair = NORMAL_BOOK_ORDER.get(normalBooks.size() - 1);
+      }
+      addNormalBooks(normalBooks, bookOrderPair);
+    }
     super.decorate(player);
   }
 

@@ -3,6 +3,7 @@ package me.mortaldev.jbtutorial.modules.book;
 import java.util.ArrayList;
 import java.util.List;
 
+import me.mortaldev.jbtutorial.Main;
 import me.mortaldev.jbtutorial.utils.ItemStackHelper;
 import me.mortaldev.jbtutorial.utils.TextUtil;
 import me.mortaldev.jbtutorial.utils.Utils;
@@ -67,12 +68,12 @@ public class Book {
   }
 
   public void addReward(ItemStack itemStack) {
-    String serializedReward = ItemStackHelper.serialize(itemStack);
+    String serializedReward = ItemStackHelper.serializePass(itemStack);
     rewards.add(serializedReward);
   }
 
   public void removeReward(ItemStack itemStack) {
-    String serializedReward = ItemStackHelper.serialize(itemStack);
+    String serializedReward = ItemStackHelper.serializePass(itemStack);
     rewards.remove(serializedReward);
   }
 
@@ -123,7 +124,13 @@ public class Book {
   }
 
   public void updateReward(ItemStack original, ItemStack replacement){
-    addReward(replacement);
-    removeReward(original);
+    String originalSerialized = ItemStackHelper.serializePass(original);
+    String replacementSerialized = ItemStackHelper.serializePass(replacement);
+    int i = rewards.indexOf(originalSerialized);
+    if (i == -1) {
+      Main.log("Failed to update book reward. Original not found.");
+      return;
+    }
+    rewards.set(i, replacementSerialized);
   }
 }

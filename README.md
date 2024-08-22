@@ -62,7 +62,7 @@ These are actions a player must do to complete a step.
 - **MINE** - Must break a block.
     - `data: 8 of COBBLESTONE` *Must break 8 of cobblestone.*
     - `data: 8` *Must break 8 of any block.*
-- **INVENTORY_CLICK** - Must click an item in their INVENTORY_CLICK
+- **INVENTORY_CLICK** - Must click an item in their inventory.
     - `data: IRON_DOOR` *Must click an iron door.*
     - `data: GRASS_BLOCK named "&7Spawn"` *Must click a grass block named "&7Spawn".*
 - **SELL** - [ShopGUIPlus] Must sell an amount of items.
